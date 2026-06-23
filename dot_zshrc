@@ -1,0 +1,18 @@
+source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+alias wps="QT_SCALE_FACTOR=1 wps"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# ─── Hyprland Backup Aliases ───────────────────────────────────────────
+alias hyprbackup='~/Unduhan/hyprland-backups/backup-hyprland.sh'
+alias hyprrestore='~/Unduhan/hyprland-backups/restore-hyprland.sh'
+alias hyprlist='~/Unduhan/hyprland-backups/restore-hyprland.sh --list'
+alias hyprsnap='~/Unduhan/hyprland-backups/btrfs-snapshot.sh'
+alias hyprsnap-list='~/Unduhan/hyprland-backups/btrfs-snapshot.sh list'
+alias hyprsnap-create='~/Unduhan/hyprland-backups/btrfs-snapshot.sh create'
+alias hypr-keybind-prep='~/Unduhan/hyprland-backups/.git/hooks/pre-keybind-edit'
+
+
+# ─── HyDE Wallpaper Backend ─────────────────────────────────────────────
+# Default backend: awww (swww tidak ada di CachyOS repo)
+export WALLPAPER_BACKEND=awww

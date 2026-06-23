@@ -1,0 +1,307 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$kubernetes\
+$directory\
+$git_branch\
+${custom.giturl}\
+$git_commit\
+$git_state\
+$git_status\
+$all
+"""
+
+# right_format = """$all"""
+
+# Duration entry
+[cmd_duration]
+min_time = 10000
+format = "[󰔟 $duration](bold cyan)"
+
+# Git entry
+[git_metrics]
+added_style = "green"
+deleted_style = "red"
+format = '(\([+$added]($added_style)/[-$deleted]($deleted_style)\))'
+
+[git_status]
+ahead = '[](bold green) '
+conflicted = '[󱡂 ](bold red) '
+untracked = '[](bold purple) '
+staged = '[](bold green) '
+stashed = '[](cyan) '
+deleted = '[](bold red) '
+modified = '[ ](bold yellow) '
+behind = '[](bold yellow) '
+renamed = '[󰬴 ](bold blue) '
+up_to_date = ''
+diverged = '[󱓌 ](bold red) '
+format = '([$all_status$ahead_behind]($style))'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+# Gcloud entry
+[gcloud]
+format = "[$symbol]($style) "
+symbol = " "
+style = "bold blue"
+
+# Directory entry
+[directory]
+read_only = " 󰌾"
+# home_symbol = " "
+truncation_length = 3
+
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
+# "Repos" = " "
+# "Videos" = " "
+# "obsidianVault" = "󰏪 󰠮 "
+# ".config" = " "
+
+# Custom entries
+[custom.neovim]
+command = 'bob ls | rg Used | awk "{print \$2}"' # shows output of command
+detect_folders = ["lua"]
+style = "green"
+format = "[ $output ]($style)"
+shell = ["bash"]
+
+[custom.hypr]
+style = "blue"
+format = "[ ]($style)"
+detect_files = ["hyprland.conf"]
+
+[custom.docker]
+files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+style = "bold blue"
+format = "[ ]($style)"
+
+
+[custom.giturl]
+# disabled = true
+description = "Display symbol for remote Git server"
+command = "check-git-remote"
+when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+shell = ["bash", "--noprofile", "--norc"]
+format = "$output  "
+
+# Nerd fonts preset
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[c]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[golang]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+format = '[$symbol($version )]($style)'
+
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[vagrant]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[zig]
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+# Theme
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+palette = "catppuccin_macchiato"

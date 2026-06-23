@@ -1,0 +1,7 @@
+session_name: notes
+start_directory: ~/documents/obsidian/personal-brain/vault/
+windows:
+  - window_name: notes
+    panes:
+      - shell_command:
+          - nvim
