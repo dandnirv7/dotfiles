@@ -1,3 +1,6 @@
-# Chezmoi config (synced across machines via dot_chezmoi/chezmoi.toml)
-# source.path kosong = default (./ di dalam source dir)
+# Chezmoi config (synced across machines)
 source.path = ""
+
+# Forward-compat: data block untuk multi-host (isi variabel per host)
+[data]
+# hostname = "{{ .chezmoi.hostname }}"

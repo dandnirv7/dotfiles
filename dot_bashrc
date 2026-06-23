@@ -28,3 +28,16 @@ alias hypr-keybind-prep='~/Unduhan/hyprland-backups/.git/hooks/pre-keybind-edit'
 export WALLPAPER_BACKEND=awww
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# ─── chezmoi shortcuts ─────────────────────────────────────────────
+alias cz='chezmoi'
+alias cza='chezmoi add'
+alias czd='chezmoi diff'
+alias czg='chezmoi git'
+alias czs='chezmoi status'
+czp() {
+  local msg="${1:-update dotfiles}"
+  chezmoi git add -A
+  chezmoi git -c commit.gpgsign=false commit -m "$msg"
+  chezmoi git push origin main
+}
