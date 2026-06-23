@@ -16,3 +16,5 @@ alias hypr-keybind-prep='~/Unduhan/hyprland-backups/.git/hooks/pre-keybind-edit'
 # ─── HyDE Wallpaper Backend ─────────────────────────────────────────────
 # Default backend: awww (swww tidak ada di CachyOS repo)
 export WALLPAPER_BACKEND=awww
+
+export PATH="$HOME/.local/bin:$PATH"
