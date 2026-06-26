@@ -27,7 +27,7 @@ alias czg='chezmoi git'
 alias czs='chezmoi status'
 czp() {
   local msg="${1:-update dotfiles}"
-  chezmoi git add -A
-  chezmoi git -c commit.gpgsign=false commit -m "$msg"
+  chezmoi git -- add -A
+  chezmoi git -- -c commit.gpgsign=false commit -m "$msg"
   chezmoi git push origin main
 }

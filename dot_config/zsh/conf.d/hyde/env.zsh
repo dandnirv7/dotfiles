@@ -46,6 +46,9 @@ PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 # HyDEs Compositor Configuration
 export HYPRLAND_CONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/hypr/hyprland.conf"
 
+# API Keys
+export 9ROUTER_API_KEY=""
+
 # Export all variables
 export PATH \
   XDG_CONFIG_HOME XDG_DATA_HOME XDG_DATA_DIRS XDG_STATE_HOME XDG_CACHE_HOME \
